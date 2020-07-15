@@ -60,7 +60,7 @@ public class AlumnoController extends CommonController<Alumno, AlumnoService> {
 
 		Alumno alumnoDb = o.get();
 		alumnoDb.setNombre(alumno.getNombre());
-		alumnoDb.setApellidos(alumno.getApellidos());
+		alumnoDb.setApellido(alumno.getApellido());
 		alumnoDb.setEmail(alumno.getEmail());
 
 		return ResponseEntity.status(HttpStatus.CREATED).body(service.save(alumnoDb));
@@ -98,7 +98,7 @@ public class AlumnoController extends CommonController<Alumno, AlumnoService> {
 
 		Alumno alumnoDb = o.get();
 		alumnoDb.setNombre(alumno.getNombre());
-		alumnoDb.setApellidos(alumno.getApellidos());
+		alumnoDb.setApellido(alumno.getApellido());
 		alumnoDb.setEmail(alumno.getEmail());
 		
 		if(!archivo.isEmpty()) {
