@@ -1,6 +1,7 @@
 package com.formacionbdi.microservicios.app.usuarios.controllers;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.Optional;
 
 import javax.validation.Valid;
@@ -27,6 +28,12 @@ import com.formacionbdi.microservicios.commons.controllers.CommonController;
 @RestController
 public class AlumnoController extends CommonController<Alumno, AlumnoService> {
 
+	@GetMapping("/alumnos-por-curso")
+	public ResponseEntity<?> obtenerAlumnosPorCurso(@RequestParam List<Long> ids) {
+		return ResponseEntity.ok(service.findAllById(ids));
+	}
+	
+	
 	@GetMapping("/uploads/img/{id}")
 	public ResponseEntity<?> verFoto(@PathVariable Long id) {
 		
